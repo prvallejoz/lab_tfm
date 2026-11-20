@@ -1,11 +1,11 @@
-@echo off
+@echo on
 :: ============================================================================
 :: SCRIPT DE INYECCION MITM Y PROXY GLOBAL EN ANDROID 15 (MODULO APEX)
 :: ============================================================================
 
 echo.
 echo === [FASE 1/5] INICIANDO EMULADOR EN MODO ESCRIBIBLE Y ARRANQUE LIMPIO ===
-start "Emulador_AVD" "C:\Users\prval\AppData\Local\Android\Sdk\emulator\emulator.exe" -avd Lab_TFM -writable-system -no-snapshot-load
+start "Emulador_AVD" "C:\Users\prval\AppData\Local\Android\Sdk\emulator\emulator.exe" -avd Lab_TFM -writable-system
 
 echo.
 echo === [FASE 2/5] ESPERANDO CONEXION ADB Y ARRANQUE COMPLETO DEL SISTEMA ===
@@ -24,9 +24,14 @@ adb shell "cp /apex/com.android.conscrypt/cacerts/* /data/local/tmp/certs/"
 
 echo.
 echo === [FASE 4/5] MONTANDO TMPFS EN PID 1 (INIT) Y PROPAGANDO A ZYGOTE ===
-adb shell sh -c 'nsenter --mount=/proc/1/ns/mnt -- mount -t tmpfs tmpfs /apex/com.android.conscrypt/cacerts && cp /data/local/tmp/certs/* /apex/com.android.conscrypt/cacerts/ && cp /data/local/tmp/9a5ba575.0 /apex/com.android.conscrypt/cacerts/ && chown root:root /apex/com.android.conscrypt/cacerts/* && chmod 644 /apex/com.android.conscrypt/cacerts/* && chcon u:object_r:system_file:s0 /apex/com.android.conscrypt/cacerts/*'
+adb shell "nsenter --mount=/proc/1/ns/mnt -- mount -t tmpfs tmpfs /apex/com.android.conscrypt/cacerts"
+adb shell "nsenter --mount=/proc/1/ns/mnt -- cp /data/local/tmp/certs/* /apex/com.android.conscrypt/cacerts/"
+adb shell "nsenter --mount=/proc/1/ns/mnt -- cp /data/local/tmp/9a5ba575.0 /apex/com.android.conscrypt/cacerts/"
+adb shell "nsenter --mount=/proc/1/ns/mnt -- chown root:root /apex/com.android.conscrypt/cacerts/*"
+adb shell "nsenter --mount=/proc/1/ns/mnt -- chmod 644 /apex/com.android.conscrypt/cacerts/*"
+adb shell "nsenter --mount=/proc/1/ns/mnt -- chcon u:object_r:system_file:s0 /apex/com.android.conscrypt/cacerts/*"
 
-adb shell sh -c 'for p in $(pidof system_server zygote zygote64); do nsenter --mount=/proc/$p/ns/mnt -- mount --bind /apex/com.android.conscrypt/cacerts /apex/com.android.conscrypt/cacerts 2>/dev/null; done'
+adb shell "for p in $(pidof system_server zygote zygote64); do nsenter --mount=/proc/$p/ns/mnt -- mount --bind /apex/com.android.conscrypt/cacerts /apex/com.android.conscrypt/cacerts; done"
 
 echo.
 echo === [FASE 5/5] CONFIGURANDO PROXY GLOBAL HACIA BURP SUITE ===

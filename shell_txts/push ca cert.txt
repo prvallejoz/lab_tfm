@@ -1,0 +1,128 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\prval> openssl.exe version
+OpenSSL 4.0.2 25 Aug 2026 (Library: OpenSSL 4.0.2 25 Aug 2026)
+PS C:\Users\prval> ls
+
+
+    Directorio: C:\Users\prval
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         16/9/2026     19:50                .android
+d-----         16/5/2026      8:22                .cache
+d-----         16/5/2026      9:32                .cagent
+d-----         23/3/2026     20:18                .config
+d-----         14/9/2026     18:20                .copilot
+d-----         15/9/2026     10:04                .docker
+d-----         20/6/2026      9:30                .gemini
+d-----          6/6/2026     11:09                .gnupg
+d-----          2/9/2026     22:16                .gradle
+d-----         27/4/2026     18:09                .ipython
+d-----          5/6/2026     19:31                .junie
+d-----         27/4/2026     18:11                .matplotlib
+d-----          2/9/2026     22:48                .mitmproxy
+d-----         13/3/2026     20:13                .ms-ad
+d-----         21/3/2026     11:35                .thumbnails
+d-----         16/5/2026     10:48                .VirtualBox
+d-----         23/3/2026     20:19                .vscode
+d-----         26/6/2026     21:36                .vscode-shared
+d-----          2/9/2026     21:54                AndroidStudioProjects
+d-r---         13/3/2026      9:04                Contacts
+d-r---         16/9/2026     19:50                Desktop
+d-r---         31/7/2026     16:50                Documents
+d-r---         16/9/2026     19:58                Downloads
+d-r---         13/3/2026      9:04                Favorites
+d-r---         13/3/2026      9:04                Links
+d-r---         13/3/2026      9:04                Music
+dar---         13/3/2026      9:07                OneDrive
+dar--l         16/9/2026     19:34                OneDrive - Universidad Internacional del Ecuador
+d-r---         29/4/2026     20:11                Pictures
+d-----          5/6/2026     18:37                PyCharmMiscProject
+d-----         13/6/2026     10:04                PycharmProjects
+d-r---         13/3/2026      9:04                Saved Games
+d-r---         13/3/2026      9:20                Searches
+d-r---         20/3/2026     17:52                Videos
+d-----         16/5/2026      8:15                VirtualBox VMs
+d-----         11/8/2026     18:11                Web
+d-----          9/8/2026     13:21                ZAP
+-a----          2/9/2026     22:16             16 .emulator_console_auth_token
+-a----         23/3/2026     20:51             58 .gitconfig
+-a----         11/7/2026      8:48             31 .wslconfig
+-a----         16/5/2026     10:47           3917 2026-05-16-15-47-55.018-VirtualBoxVM.exe-19932.log
+-a----         13/6/2026     11:53         153053 assets.sql
+-a----         11/8/2026     18:26            620 ezpcopensdkconfig_9ffc4da769078eeb963f0897d728be4e.xml
+-a----         14/7/2026     20:50           1422 firmadigital.log
+-a----          6/6/2026     12:10            150 firmadigital.properties
+-a----         11/7/2026      8:48              0 Nuevo Documento de texto.txt
+
+
+PS C:\Users\prval> cd .\Desktop\
+PS C:\Users\prval\Desktop> ls
+
+
+    Directorio: C:\Users\prval\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         15/3/2026     16:57           1232 Blender 5.0.lnk
+-a----          2/9/2026     23:02            986 burp_ca.der
+-a----         14/9/2026     18:45           2128 Docker Desktop.lnk
+-a----         25/8/2026     22:22           2589 Mendeley Reference Manager.lnk
+-a----          8/8/2026      9:20           1372 Navegador Opera.lnk
+-a----         13/3/2026      9:26           1032 Telegram.lnk
+-a----         23/3/2026     19:46           1392 Visual Studio Code.lnk
+-a----         13/3/2026      9:44           2367 xTool Studio.lnk
+-a----          5/8/2026     20:03           1951 Zoom Workplace.lnk
+
+
+PS C:\Users\prval\Desktop> openssl.exe x509 -inform DER -subject_hash_old -in burp_ca.der | head -1
+head : El término 'head' no se reconoce como nombre de un cmdlet, función, archivo de script o programa ejecutable.
+Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso, compruebe que dicha ruta es correcta e
+inténtelo de nuevo.
+En línea: 1 Carácter: 66
++ ... nssl.exe x509 -inform DER -subject_hash_old -in burp_ca.der | head -1
++                                                                   ~~~~
+    + CategoryInfo          : ObjectNotFound: (head:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\prval\Desktop> openssl x509 -inform DER -subject_hash_old -in burp_ca.der | Select-Object -First 1
+9a5ba575
+PS C:\Users\prval\Desktop> ren .\burp_ca.der 9a5ba575.0
+PS C:\Users\prval\Desktop> adb root
+restarting adbd as root
+PS C:\Users\prval\Desktop> adb remount
+Device must be bootloader unlocked
+PS C:\Users\prval\Desktop> adb root
+restarting adbd as root
+PS C:\Users\prval\Desktop> adb remount
+Successfully disabled verity
+virtual bool android::fiemap::ImageManagerBinder::MapImageDevice(const std::string &, const std::chrono::milliseconds &, std::string *) binder returned: Failed to map
+[libfs_mgr] could not map scratch image
+Failed to allocate scratch on /data, fallback to use free space on super
+Using overlayfs for /system
+Using overlayfs for /vendor
+Using overlayfs for /product
+Using overlayfs for /system_dlkm
+Using overlayfs for /system_ext
+Verity disabled; overlayfs enabled.
+Now reboot your device for settings to take effect
+PS C:\Users\prval\Desktop> adb reboot
+PS C:\Users\prval\Desktop> adb root
+restarting adbd as root
+PS C:\Users\prval\Desktop> adb remount
+Successfully disabled verity
+Remounted /system as RW
+Remounted /vendor as RW
+Remounted /product as RW
+Remounted /system_dlkm as RW
+Remounted /system_ext as RW
+Remount succeeded
+PS C:\Users\prval\Desktop> adb push .\9a5ba575.0 /system/etc/security/cacerts
+.\9a5ba575.0: 1 file pushed, 0 skipped. 0.4 MB/s (986 bytes in 0.003s)
+PS C:\Users\prval\Desktop> adb shell chmod 644 /system/etc/security/cacerts/9a5ba575.0
+PS C:\Users\prval\Desktop> adb reboot
+PS C:\Users\prval\Desktop>

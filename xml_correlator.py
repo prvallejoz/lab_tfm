@@ -26,6 +26,9 @@ DOMINIOS_CONOCIDOS = {
         "adservice.google.com",
         "tpc.googlesyndication.com",
     ],
+    "Google AdSense": [
+            "pagead2.googleadservices.com",           
+        ],
 }
 
 # Patrones de búsqueda para parámetros sensibles y telemetría

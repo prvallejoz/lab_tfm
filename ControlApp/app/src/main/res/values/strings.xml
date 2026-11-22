@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AplicacionControlada</string>
+    <!-- Credenciales de Meta for Developers (Modo Desarrollo) -->
+    <string name="facebook_app_id">29845931428345685</string>
+    <string name="facebook_client_token">e9c5d87245dd16c77954318aaaad7344</string>
+    <string name="_1_solicitar_permiso_ubicaci_n_sc_001">1. Solicitar Permiso Ubicación (SC-001)</string>
+    <string name="_2_disparar_eventos_firebase_y_facebook">2. Disparar Eventos Firebase y Facebook</string>
+    <string name="_3_cargar_banner_publicitario_admob">3. Cargar Banner Publicitario AdMob</string>
+</resources>

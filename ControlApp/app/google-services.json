@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "889950927506",
+    "project_id": "labtfm",
+    "storage_bucket": "labtfm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889950927506:android:7df99779f69a3e33b4844b",
+        "android_client_info": {
+          "package_name": "com.example.aplicacioncontrolada"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAj79nllNj9A61yKXdL47-YGNiBqsGsn34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

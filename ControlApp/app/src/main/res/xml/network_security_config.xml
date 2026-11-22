@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <!-- Confía en las autoridades certificadoras del sistema (incluyendo PortSwigger inyectado) -->
+            <certificates src="system" />
+            <!-- Confía también en certificados instalados en el almacén de usuario -->
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

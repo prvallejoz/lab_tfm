@@ -35,15 +35,15 @@ PATRONES_SENSIBLES = {
         re.IGNORECASE,
     ),
     "Ubicacion": re.compile(
-        r"(?:lat|latitude|lon|lng|longitude|gps)[\"':=\s]+(-?\d{1,3}\.\d+)",
+        r"\b(?:lat|latitude|lon|lng|longitude|gps)[\"':=\s]+(-?\d{1,3}\.\d{3,})",
         re.IGNORECASE,
     ),
     "Dispositivo/OS": re.compile(
-        r"(?:device_model|model|os_version|sdk_version|carrier|bundle_id)[\"':=\s]+([^&\",}\s]+)",
+        r"\b(?:device_model|submodel|model|os_version|sdk_version|carrier|bundle_id|app_name)[\"':=\s]+([a-zA-Z0-9_.-]{2,40})",
         re.IGNORECASE,
     ),
-    "Evento_TFM": re.compile(
-        r"(?:event_name|_o|_n|escenario_tfm|evento_controlado_tfm|fb_evento_controlado_tfm)[\"':=\s]+([^&\",}\s]+)",
+    "Evento_Analitico": re.compile(
+        r"\b(?:event_name|_eventName|escenario_tfm|evento_controlado_tfm|fb_evento_controlado_tfm)[\"':=\s]+([a-zA-Z0-9_.-]{3,45})",
         re.IGNORECASE,
     ),
 }

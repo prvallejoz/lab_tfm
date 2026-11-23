@@ -5,7 +5,7 @@
 
 :: --- VARIABLES DE CONFIGURACION ---
 set "AVD_NAME=Lab_TFM_API33"
-set "SNAPSHOT_NAME=snap_base_limpio"
+set "SNAPSHOT_NAME=snap_2026-11-22_15-52-16"
 set "EMULATOR_PATH=C:\Users\prval\AppData\Local\Android\Sdk\emulator\emulator.exe"
 set "CERT_FILENAME=9a5ba575.0"
 set "PROXY_IP=192.168.0.96:8080"

@@ -1,0 +1,22 @@
+{
+    "Google Analytics for Firebase": [
+        "app-measurement.com",
+        "firebaselogging.googleapis.com",
+        "firebaseremoteconfig.googleapis.com",
+        "firebaseinstallations.googleapis.com"
+    ],
+    "Facebook SDK (Meta)": [
+        "graph.facebook.com",
+        "connect.facebook.net",
+        "ep1.facebook.com",
+        "an.facebook.com"
+    ],
+    "Google AdMob": [
+        "googleads.g.doubleclick.net",
+        "pagead2.googlesyndication.com",
+        "pagead2.googleadservices.com",
+        "adservice.google.com",
+        "tpc.googlesyndication.com",
+        "dai.google.com"
+    ]
+}
